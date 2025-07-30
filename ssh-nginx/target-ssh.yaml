@@ -1,0 +1,15 @@
+# k8s/target-ssh.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: target-ssh
+  labels:
+    role: target
+spec:
+  containers:
+  - name: ssh-nginx-container
+    image: ssh-nginx:1.0
+    ports:
+    - containerPort: 22
+    - containerPort: 80
